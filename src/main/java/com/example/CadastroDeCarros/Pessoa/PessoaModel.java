@@ -1,6 +1,7 @@
 package com.example.CadastroDeCarros.Pessoa;
 
 import com.example.CadastroDeCarros.Carro.CarroModel;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,11 +20,10 @@ public class PessoaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private Long Cpf;
+    private Long cpf;
     private String email;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "pessoa")
     private List<CarroModel>carros;
-
-
 }

@@ -1,6 +1,7 @@
 package com.example.CadastroDeCarros.Carro;
 
 import com.example.CadastroDeCarros.Pessoa.PessoaModel;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class CarroModel {
     private int ano;
     private int valor;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private PessoaModel pessoa;
