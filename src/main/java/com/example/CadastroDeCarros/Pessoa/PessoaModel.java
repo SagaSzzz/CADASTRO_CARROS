@@ -26,4 +26,13 @@ public class PessoaModel {
     @JsonManagedReference
     @OneToMany(mappedBy = "pessoa")
     private List<CarroModel>carros;
+
 }
+
+
+
+
+
+
+
+
